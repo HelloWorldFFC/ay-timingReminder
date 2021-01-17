@@ -1,12 +1,20 @@
-<template>
-	<view>
-		
-		<aytimingReminder :isCountDown="isCountDown" :countDownTip="countDownTip"
-		@toStart="toStart" @toCancelRemander="toCancelRemander"></aytimingReminder>
-	</view>
-</template>
+## 前言
+请下载示例项目，直接运行	
 
-<script>
+## 有疑问
+微信搜索“慢慢向好”小程序，找客服反馈，相应问题。
+	  
+
+## 素材
+[图片资源](https://pixabay.com)
+ 
+## 开始使用
+下载源码解压，复制`/components` 下的组件至项目根目录的 `/components` 文件夹下
+
+
+页面 js部分如下：
+引入 `ay-timingReminder` 组件，并加入优化js：`preDupliClick` 和 `storage`和 `timeConvert`及定时器实现功能。
+```
 	import preDupliClick from '../../api/preDupliClick.js'
 	import storage from '@/store/storage.js'
 	import timeConvert from '../../api/timeConvert.js'
@@ -172,7 +180,28 @@
 		}
 
 	}
-</script>
 
-<style lang="scss">
+```
+
+页面`index.vue` 引入关键标签
+```
+<aytimingReminder :isCountDown="isCountDown" :countDownTip="countDownTip"
+		@toStart="toStart" @toCancelRemander="toCancelRemander"></aytimingReminder>
+```
+
+页面`App.vue` 引入`colorui`,及公用css
+```
+<style>
+	/*每个页面公共css */
+	@import './colorui/main.css';
+	@import './colorui/icon.css';
+	.cf-bgcolorTheme{
+		background-color: #1296db;
+		color:  #FFFFFF;
+	}
 </style>
+```
+
+## 特别鸣谢
+[colorui](https://ext.dcloud.net.cn/plugin?id=239)
+ 
